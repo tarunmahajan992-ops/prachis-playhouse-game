@@ -77,12 +77,7 @@ const AboutSection = () => {
               </Card>
             </div>
 
-            <Button 
-              variant="action" 
-              size="lg" 
-              className="group"
-              onClick={() => document.getElementById('games')?.scrollIntoView({ behavior: 'smooth' })}
-            >
+            <Button variant="action" size="lg" className="group">
               <Gamepad2 className="w-5 h-5 group-hover:animate-bounce" />
               View My Games
             </Button>
@@ -99,6 +94,35 @@ const AboutSection = () => {
                 className="relative w-full max-w-md mx-auto rounded-2xl shadow-neon-glow border-neon"
               />
             </div>
+
+            {/* Skills */}
+            <Card className="p-8 bg-gradient-card border-neon shadow-card-elegant">
+              <h4 className="text-2xl font-bold text-gradient-primary mb-6">
+                Technical Skills
+              </h4>
+              <div className="space-y-4">
+                {skills.map((skill, index) => (
+                  <div key={skill.name} className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <skill.icon className="w-5 h-5 text-primary" />
+                        <span className="font-medium text-foreground">{skill.name}</span>
+                      </div>
+                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                    </div>
+                    <div className="h-2 bg-muted rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-gradient-primary rounded-full transition-all duration-1000 ease-out"
+                        style={{ 
+                          width: `${skill.level}%`,
+                          animationDelay: `${index * 0.1}s`
+                        }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Card>
           </div>
         </div>
       </div>

@@ -46,12 +46,7 @@ const Navigation = () => {
               </a>
             ))}
             
-            <Button 
-              variant="gaming" 
-              size="sm" 
-              className="group"
-              onClick={() => document.getElementById('games')?.scrollIntoView({ behavior: 'smooth' })}
-            >
+            <Button variant="gaming" size="sm" className="group">
               <Gamepad2 className="w-4 h-4 group-hover:animate-bounce" />
               Play Now
             </Button>
@@ -84,14 +79,7 @@ const Navigation = () => {
                 </a>
               ))}
               <div className="px-4 pt-2">
-                <Button 
-                  variant="gaming" 
-                  className="w-full group"
-                  onClick={() => {
-                    setIsOpen(false);
-                    document.getElementById('games')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
+                <Button variant="gaming" className="w-full group">
                   <Gamepad2 className="w-4 h-4 group-hover:animate-bounce" />
                   Play Now
                 </Button>
